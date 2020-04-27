@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Authentication.ExtendedProtection.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,26 +30,20 @@ namespace MenschAergereDichNicht
 					lbl_ErsterSpielerName.Content = Logik.PlayerList[0].Name;
 					break;
 				case 2:
-					lbl_ErsterSpielerName.Content = Logik.PlayerList[0].Name;
 					lbl_ZweiterSpielerName.Content = Logik.PlayerList[1].Name;
-
-					break;
+					goto case 1;
 				case 3:
-					lbl_ErsterSpielerName.Content = Logik.PlayerList[0].Name;
-					lbl_ZweiterSpielerName.Content = Logik.PlayerList[1].Name;
 					lbl_DritterSpielerName.Content = Logik.PlayerList[2].Name;
-					break;
+					goto case 2;
 				case 4:
-					lbl_ErsterSpielerName.Content = Logik.PlayerList[0].Name;
-					lbl_ZweiterSpielerName.Content = Logik.PlayerList[1].Name;
-					lbl_DritterSpielerName.Content = Logik.PlayerList[2].Name;
 					lbl_VierterSpielerName.Content = Logik.PlayerList[3].Name;
-					break;
+					goto case 3;
 			}
 
 
 		}
 
+		#region Eventhandler
 		private void btn_wuerfeln_Click(object sender, RoutedEventArgs e)
 		{
 
@@ -61,22 +54,19 @@ namespace MenschAergereDichNicht
 		private void FeldKlick(object sender, RoutedEventArgs e)
 		{
 			Button btn = sender as Button;
-			if (btn != null)
+			int row = Grid.GetRow(btn);
+			int column = Grid.GetColumn(btn);
+			if (Logik.FieldClick(row, column) == false)
 			{
-				int row = Grid.GetRow(btn);
-				int column = Grid.GetColumn(btn);
-				Logik.FieldClick(row, column);
-				//Testzwecke
+				MessageBox.Show(" Mit dem angeklickten Stein ist kein Zug möglich");
+			}
+
 #if DEBUG //Code wird Nur im Debugmodus ausgeführt
-				MessageBox.Show($"Row {row} und Column {column} ");
+			MessageBox.Show($"Row {row} und Column {column} ");
 #endif
-			}
-			else
-			{
-				MessageBox.Show("Button ist null gewesen");
-			}
 		}
-		private void HausClick(object sender, RoutedEventArgs e)
+
+		private void HausMouseUp(object sender, RoutedEventArgs e)
 		{
 			//Logik.FieldClick(e.Source)
 
@@ -91,7 +81,7 @@ namespace MenschAergereDichNicht
 
 			Button btn = sender as Button;
 
-			
+
 			if (btn != null && Enum.TryParse(btn.Tag.ToString(), out Color color))
 			{
 				Logik.HomeClick(color);
@@ -110,6 +100,24 @@ namespace MenschAergereDichNicht
 		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			Application.Current.Shutdown();
+		}
+
+		#endregion
+
+		public void Grafikupdates()
+		{
+			while (Uebergabe.GeaenderteSpielpunkte.Count > 0)
+			{
+				UIElement temp = Spielfeld_Grid.Children
+				.Cast<UIElement>()
+				.First(e => Grid.GetRow(e) == Uebergabe.GeaenderteSpielpunkte[0].Y && Grid.GetColumn(e) == Uebergabe.GeaenderteSpielpunkte[0].X);
+
+				if (temp is Button button)
+				{
+					tresname.
+				}
+			}
+
 		}
 	}
 }

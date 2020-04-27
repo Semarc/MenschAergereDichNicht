@@ -6,294 +6,172 @@
         xmlns:local="clr-namespace:MenschAergereDichNicht"
     mc:Ignorable="d"
         Title="MainWindow" Height="862.5" Width="684" Closing="Window_Closing"  >
-    <StackPanel Orientation="Vertical">
-     
-        <Grid  x:Name="Spielfeld_Grid" Background="LightGoldenrodYellow" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+	<StackPanel Orientation="Vertical">
+
+		<Grid  x:Name="Spielfeld_Grid" Background="LightGoldenrodYellow" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
 
 
-            </Grid.ColumnDefinitions>
+			</Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-            <!--Gelbe Steine -->
+			<!--Gelbe Steine -->
 
-            <Button Tag="Yellow" Click="HausClick" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
-                <Image Source="Resources/gelberstein.png" />
-            </Button>
+			<Image x:Name="tresname" Tag="Yellow" MouseUp="HausMouseUp" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="Resources/gelberstein.png"/>
 
-            <!--GrüneSteine-->
-            <Button Tag="Green" Click="HausClick" Grid.Column="9" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
-                <Image Source="Resources/gruenerstein.png"/>
-            </Button>
+			<!--GrüneSteine-->
+			<Image Tag="Green" MouseUp="HausMouseUp" Grid.Column="9" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/gruenerstein.png"/>
 
-            <!--  Schwarze Steine   -->
-            <Button Tag="Black" Click="HausClick" Grid.Column="0" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" >
-                <Image Source="Resources/schwarzerstein.png"></Image>
-            </Button>
+			<!--  Schwarze Steine   -->
+			<Image Tag="Black" MouseUp="HausMouseUp" Grid.Column="0" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/schwarzerstein.png"/>
 
-            <!--Rote Steine-->
+			<!--Rote Steine-->
 
-            <Button Tag="Red" Click="HausClick" Grid.Column="9" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2">
-                <Image Source="Resources/roterstein.png"></Image>
-            </Button>
+			<Image Tag="Red" MouseUp="HausMouseUp" Grid.Column="9" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/roterstein.png"/>
 
-            <!-- Anfangs Punkte Häuser-->
-            <!-- Schwarz -->
-            <Button Grid.Row="10" Grid.Column="4" Click="FeldKlick">
-                <Image Source="Resources/A_schwarz.png"/>
-            </Button>
-            <!-- Rot -->
+			<!-- Anfangs Punkte Häuser-->
+			<!-- Schwarz -->
+			<Image Grid.Row="10" Grid.Column="4" MouseUp="FeldKlick" Source="Resources/A_schwarz.png"/>
+			<!-- Rot -->
 
-            <Button Grid.Row="6" Grid.Column="10" Click="FeldKlick">
-                <Image Source="Resources\A_rot.png"></Image>
-            </Button>
+			<Image Grid.Row="6" Grid.Column="10" MouseUp="FeldKlick" Source="Resources\A_rot.png"/>
 
-            <!-- Grün -->
-            <Button Grid.Column="6" Grid.Row="0" Click="FeldKlick">
-                <Image Source="Resources\A_gruen.png">
+			<!-- Grün -->
+			<Image Grid.Column="6" Grid.Row="0" MouseUp="FeldKlick" Source="Resources\A_gruen.png"/>
 
-                </Image>
-            </Button>
-
-            <!-- Gelb -->
-            <Button Grid.Column="0" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources\A_gelb.png">
-
-                </Image>
-            </Button>
+			<!-- Gelb -->
+			<Image Grid.Column="0" Grid.Row="4" MouseUp="FeldKlick" Source="Resources\A_gelb.png"/>
 
 
-            <!--Ziel-->
-            <!--Grün-->
-            <!-- Neunte Reihe -->
-            <Button Grid.Column="5" Grid.Row="1" Click="FeldKlick">
-                <Image Source="Resources/gruenerstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="2" Click="FeldKlick">
-                <Image Source="Resources/gruenerstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="3" Click="FeldKlick">
-                <Image Source="Resources/gruenerstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/gruenerstein.png"></Image>
-            </Button>
+			<!--Ziel-->
+			<!--Grün-->
+			<!-- Neunte Reihe -->
+			<Image Grid.Column="5" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
 
-            <!-- Gelb -->
+			<!-- Gelb -->
 
-            <Button Grid.Column="1" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/gelberstein.png"></Image>
-            </Button>
-            <Button Grid.Column="2" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/gelberstein.png"></Image>
-            </Button>
-            <Button Grid.Column="3" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/gelberstein.png"></Image>
-            </Button>
-            <Button Grid.Column="4" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/gelberstein.png"></Image>
-            </Button>
+			<Image Grid.Column="1" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
+			<Image Grid.Column="2" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
+			<Image Grid.Column="3" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
+			<Image Grid.Column="4" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
 
 
-            <!-- Rot -->
-            <Button Grid.Column="6" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/roterstein.png"></Image>
-            </Button>
-            <Button Grid.Column="7" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/roterstein.png"></Image>
-            </Button>
-            <Button Grid.Column="8" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/roterstein.png"></Image>
-            </Button>
-            <Button Grid.Column="9" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/roterstein.png"></Image>
-            </Button>
-
-            <!-- Schwarz -->
-            <Button Grid.Column="5" Grid.Row="9" Click="FeldKlick">
-                <Image Source="Resources/schwarzerstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="8" Click="FeldKlick">
-                <Image Source="Resources/schwarzerstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="7" Click="FeldKlick">
-                <Image Source="Resources/schwarzerstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/schwarzerstein.png"></Image>
-            </Button>
+			<!-- Rot -->
+			<Image Grid.Column="6" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
+			<Image Grid.Column="7" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
+			<Image Grid.Column="8" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
+			<Image Grid.Column="9" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
 
 
-            <!-- Spielfeld Von Oben nach Unten -->
+			<!-- Schwarz -->
+			<Image Grid.Column="5" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
 
-            <!-- Erste Reihe -->
-            <Button Grid.Column="4" Grid.Row="0" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="5" Grid.Row="0" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
 
-            <!-- Zweite Reihe -->
-            <Button Grid.Column="4" Grid.Row="1" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="1" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Spielfeld Von Oben nach Unten -->
 
-            <!-- Dritte Reihe -->
-            <Button Grid.Column="4" Grid.Row="2" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="2" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Erste Reihe -->
+			<Image Grid.Column="4" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="5" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Vierte Reihe -->
-            <Button Grid.Column="4" Grid.Row="3" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="3" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Zweite Reihe -->
+			<Image Grid.Column="4" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Fünfte Reihe -->
-            <Button Grid.Column="1" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="2" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="3" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="4" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="7" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="8" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="9" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="10" Grid.Row="4" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Dritte Reihe -->
+			<Image Grid.Column="4" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Sechste Reihe -->
-            <Button Grid.Column="0" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="10" Grid.Row="5" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Vierte Reihe -->
+			<Image Grid.Column="4" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!--Siebte Reihe -->
-            <Button Grid.Column="0" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="1" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="2" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="3" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="4" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="7" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="8" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="9" Grid.Row="6" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Fünfte Reihe -->
+			<Image Grid.Column="1" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="2" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="3" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="4" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="7" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="8" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="9" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="10" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			
+			<!-- Sechste Reihe -->
+			<Image Grid.Column="0" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="10" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Achte Reihe -->
-            <Button Grid.Column="4" Grid.Row="7" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="7" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <!-- Neunte Reihe -->
-            <Button Grid.Column="4" Grid.Row="8" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="8" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!--Siebte Reihe -->
+			<Image Grid.Column="0" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="1" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="2" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="3" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="4" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="7" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="8" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="9" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Zehnte Reihe -->
-            <Button Grid.Column="4" Grid.Row="9" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="9" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Achte Reihe -->
+			<Image Grid.Column="4" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			
+			<!-- Neunte Reihe -->
+			<Image Grid.Column="4" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Elfte (letzte) Reihe -->
-            <Button Grid.Column="5" Grid.Row="10" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
-            <Button Grid.Column="6" Grid.Row="10" Click="FeldKlick">
-                <Image Source="Resources/standard_spielstein.png"></Image>
-            </Button>
+			<!-- Zehnte Reihe -->
+			<Image Grid.Column="4" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-            <!-- Spielernamen -->
-            <!-- Schwarz-->
-            <Label x:Name="lbl_ErsterSpielerName" Grid.Row="8" ></Label>
-            <!-- Rot -->
-            <Label  x:Name="lbl_ZweiterSpielerName" Grid.Row="8" Grid.Column="9" ></Label>
-            <!-- Grün -->
-            <Label  x:Name="lbl_DritterSpielerName" Grid.Row="2" Grid.Column="9"></Label>
-            <!-- Gelb -->
-            <Label  x:Name="lbl_VierterSpielerName" Grid.Row="2"  ></Label>
+			<!-- Elfte (letzte) Reihe -->
+			<Image Grid.Column="5" Grid.Row="10" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="6" Grid.Row="10" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
 
-        </Grid>
+			<!-- Spielernamen -->
+			<!-- Schwarz-->
+			<Label x:Name="lbl_ErsterSpielerName" Grid.Row="8" ></Label>
+			<!-- Rot -->
+			<Label  x:Name="lbl_ZweiterSpielerName" Grid.Row="8" Grid.Column="9" ></Label>
+			<!-- Grün -->
+			<Label  x:Name="lbl_DritterSpielerName" Grid.Row="2" Grid.Column="9"></Label>
+			<!-- Gelb -->
+			<Label  x:Name="lbl_VierterSpielerName" Grid.Row="2"  ></Label>
 
-        <StackPanel Width="400" Height="auto">
-            <Button x:Name="btn_wuerfeln" Click="btn_wuerfeln_Click" Margin="40">Würfeln</Button>
-            <TextBlock x:Name="wuerfelzahl_textblock" Margin="0" TextAlignment="Center">Wuerfelzahl</TextBlock>
-        </StackPanel>
-    </StackPanel>
+		</Grid>
+
+		<StackPanel Width="400" Height="auto">
+			<Button x:Name="btn_wuerfeln" MouseUp="btn_wuerfeln_MouseUp" Margin="40">Würfeln</Button>
+			<TextBlock x:Name="wuerfelzahl_textblock" Margin="0" TextAlignment="Center">Wuerfelzahl</TextBlock>
+		</StackPanel>
+	</StackPanel>
 </Window>
