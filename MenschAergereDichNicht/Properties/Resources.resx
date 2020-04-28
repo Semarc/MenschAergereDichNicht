@@ -118,32 +118,64 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="A_gelb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A_gelb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Main_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Main_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A_gruen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A_gruen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Main_Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Main_Empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A_rot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A_rot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Main_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Main_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A_schwarz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A_schwarz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Main_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Main_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gelberstein" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gelberstein.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Main_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Main_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gruenerstein" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gruenerstein.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Selection_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Selection_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="roterstein" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roterstein.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Selection_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Selection_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schwarzerstein" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schwarzerstein.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Selection_Leer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Selection_Leer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
-  <data name="standard_spielstein" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\standard_spielstein.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feld_Selection_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Selection_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feld_Selection_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Selection_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feld_Start_Ziel_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Start_Ziel_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feld_Start_Ziel_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Start_Ziel_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feld_Start_Ziel_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Start_Ziel_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feld_Start_Ziel_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Start_Ziel_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wuerfel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wuerfel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wuerfel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wuerfel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wuerfel3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wuerfel3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wuerfel4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wuerfel4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wuerfel5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wuerfel5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wuerfel6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wuerfel6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

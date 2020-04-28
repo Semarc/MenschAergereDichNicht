@@ -1,16 +1,16 @@
 ﻿<Window x:Class="MenschAergereDichNicht.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MenschAergereDichNicht"
-    mc:Ignorable="d"
-        Title="MainWindow" Height="862.5" Width="684" Closing="Window_Closing"  >
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:MenschAergereDichNicht"
+	mc:Ignorable="d"
+		Title="MainWindow" Height="862.5" Width="684" Closing="Window_Closing"  >
 	<StackPanel Orientation="Vertical">
 
-		<Grid  x:Name="Spielfeld_Grid" Background="LightGoldenrodYellow" >
+		<Grid  x:Name="Spielfeld_Grid" Background="CadetBlue" Width="670" Height="670" MinWidth="4" >
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
@@ -40,122 +40,121 @@
 			</Grid.RowDefinitions>
 
 			<!--Gelbe Steine -->
-
-			<Image x:Name="tresname" Tag="Yellow" MouseUp="HausMouseUp" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="Resources/gelberstein.png"/>
+			<Border Background="Black" Grid.Column="0" Grid.Row="0" MouseUp="HausMouseUp"></Border>
+			<Image Tag="Yellow"  MouseUp="HausMouseUp" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="Resources/Feld_Start_Ziel_Yellow.png" Width="115" Height="120" />
 
 			<!--GrüneSteine-->
-			<Image Tag="Green" MouseUp="HausMouseUp" Grid.Column="9" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/gruenerstein.png"/>
+			<Image Tag="Green" MouseUp="HausMouseUp" Grid.Column="9" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/Feld_Start_Ziel_Green.png" Width="120" Height="120"/>
 
 			<!--  Schwarze Steine   -->
-			<Image Tag="Black" MouseUp="HausMouseUp" Grid.Column="0" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/schwarzerstein.png"/>
+			<Image Tag="Black" MouseUp="HausMouseUp" Grid.Column="0" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/Feld_Start_Ziel_Black.png" Width="120" Height="120"/>
 
 			<!--Rote Steine-->
 
-			<Image Tag="Red" MouseUp="HausMouseUp" Grid.Column="9" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/roterstein.png"/>
+			<Image Tag="Red" MouseUp="HausMouseUp" Grid.Column="9" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/Feld_Start_Ziel_Red.png" Width="120" Height="120"/>
 
 			<!-- Anfangs Punkte Häuser-->
 			<!-- Schwarz -->
-			<Image Grid.Row="10" Grid.Column="4" MouseUp="FeldKlick" Source="Resources/A_schwarz.png"/>
+			<Image Grid.Row="10" Grid.Column="4" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Black.png" Width="60" Height="60"/>
 			<!-- Rot -->
 
-			<Image Grid.Row="6" Grid.Column="10" MouseUp="FeldKlick" Source="Resources\A_rot.png"/>
+			<Image Grid.Row="6" Grid.Column="10" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Red.png" Width="60" Height="60"/>
 
 			<!-- Grün -->
-			<Image Grid.Column="6" Grid.Row="0" MouseUp="FeldKlick" Source="Resources\A_gruen.png"/>
+			<Image Grid.Column="6" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Green.png" Width="60" Height="60"/>
 
 			<!-- Gelb -->
-			<Image Grid.Column="0" Grid.Row="4" MouseUp="FeldKlick" Source="Resources\A_gelb.png"/>
-
+			<Image Grid.Column="0" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Yellow.png" Width="60" Height="60"/>
 
 			<!--Ziel-->
 			<!--Grün-->
 			<!-- Neunte Reihe -->
-			<Image Grid.Column="5" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
-			<Image Grid.Column="5" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
-			<Image Grid.Column="5" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
-			<Image Grid.Column="5" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/gruenerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Green.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Green.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Green.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Green.png" Width="60" Height="60"/>
 
 			<!-- Gelb -->
 
-			<Image Grid.Column="1" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
-			<Image Grid.Column="2" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
-			<Image Grid.Column="3" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
-			<Image Grid.Column="4" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/gelberstein.png"/>
+			<Image Grid.Column="1" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Yellow.png" Width="60" Height="60"/>
+			<Image Grid.Column="2" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Yellow.png" Width="60" Height="60"/>
+			<Image Grid.Column="3" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Yellow.png" Width="60" Height="60"/>
+			<Image Grid.Column="4" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Yellow.png" Width="60" Height="60"/>
 
 
 			<!-- Rot -->
-			<Image Grid.Column="6" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
-			<Image Grid.Column="7" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
-			<Image Grid.Column="8" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
-			<Image Grid.Column="9" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/roterstein.png"/>
+			<Image Grid.Column="6" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Red.png" Width="60" Height="60"/>
+			<Image Grid.Column="7" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Red.png" Width="60" Height="60"/>
+			<Image Grid.Column="8" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Red.png" Width="60" Height="60"/>
+			<Image Grid.Column="9" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Red.png" Width="60" Height="60"/>
 
 
 			<!-- Schwarz -->
-			<Image Grid.Column="5" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
-			<Image Grid.Column="5" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
-			<Image Grid.Column="5" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
-			<Image Grid.Column="5" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/schwarzerstein.png"/>
+			<Image Grid.Column="5" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Black.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Black.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Black.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Start_Ziel_Black.png" Width="60" Height="60"/>
 
 
 			<!-- Spielfeld Von Oben nach Unten -->
 
 			<!-- Erste Reihe -->
-			<Image Grid.Column="4" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="5" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-
-			<!-- Zweite Reihe -->
-			<Image Grid.Column="4" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-
-			<!-- Dritte Reihe -->
-			<Image Grid.Column="4" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-
-			<!-- Vierte Reihe -->
-			<Image Grid.Column="4" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-
-			<!-- Fünfte Reihe -->
-			<Image Grid.Column="1" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="2" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="3" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="4" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="7" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="8" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="9" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="10" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			
+			<Image Grid.Column="4" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="5" Grid.Row="0" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																		
+			<!-- Zweite Reihe -->										
+			<Image Grid.Column="4" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="1" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																			
+			<!-- Dritte Reihe -->											
+			<Image Grid.Column="4" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="2" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																			
+			<!-- Vierte Reihe -->											
+			<Image Grid.Column="4" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="3" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																			
+			<!-- Fünfte Reihe -->											
+			<Image Grid.Column="1" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="2" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="3" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="4" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="7" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="8" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="9" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="10" Grid.Row="4" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																			
 			<!-- Sechste Reihe -->
-			<Image Grid.Column="0" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="10" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-
+			<Image Grid.Column="0" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="10" Grid.Row="5" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																			
 			<!--Siebte Reihe -->
-			<Image Grid.Column="0" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="1" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="2" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="3" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="4" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="7" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="8" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="9" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-
-			<!-- Achte Reihe -->
-			<Image Grid.Column="4" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			
-			<!-- Neunte Reihe -->
-			<Image Grid.Column="4" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="0" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="1" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="2" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="3" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="4" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="7" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="8" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="9" Grid.Row="6" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																		
+			<!-- Achte Reihe -->										
+			<Image Grid.Column="4" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="7" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+																			
+			<!-- Neunte Reihe -->											
+			<Image Grid.Column="6" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="4" Grid.Row="8" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
 
 			<!-- Zehnte Reihe -->
-			<Image Grid.Column="4" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="4" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="9" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
 
 			<!-- Elfte (letzte) Reihe -->
-			<Image Grid.Column="5" Grid.Row="10" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
-			<Image Grid.Column="6" Grid.Row="10" MouseUp="FeldKlick" Source="Resources/standard_spielstein.png"/>
+			<Image Grid.Column="5" Grid.Row="10" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
+			<Image Grid.Column="6" Grid.Row="10" MouseUp="FeldKlick" Source="Resources/Feld_Main_Empty.png" Width="60" Height="60"/>
 
 			<!-- Spielernamen -->
 			<!-- Schwarz-->
@@ -170,7 +169,7 @@
 		</Grid>
 
 		<StackPanel Width="400" Height="auto">
-			<Button x:Name="btn_wuerfeln" MouseUp="btn_wuerfeln_MouseUp" Margin="40">Würfeln</Button>
+			<Button x:Name="btn_wuerfeln" Click="btn_wuerfeln_Click" Margin="40">Würfeln</Button>
 			<TextBlock x:Name="wuerfelzahl_textblock" Margin="0" TextAlignment="Center">Wuerfelzahl</TextBlock>
 		</StackPanel>
 	</StackPanel>

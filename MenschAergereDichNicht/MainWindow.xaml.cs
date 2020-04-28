@@ -41,6 +41,9 @@ namespace MenschAergereDichNicht
 			}
 
 
+
+
+
 		}
 
 		#region Eventhandler
@@ -53,13 +56,14 @@ namespace MenschAergereDichNicht
 
 		private void FeldKlick(object sender, RoutedEventArgs e)
 		{
-			Button btn = sender as Button;
-			int row = Grid.GetRow(btn);
-			int column = Grid.GetColumn(btn);
+			Image image = sender as Image;
+			int row = Grid.GetRow(image);
+			int column = Grid.GetColumn(image);
 			if (Logik.FieldClick(row, column) == false)
 			{
 				MessageBox.Show(" Mit dem angeklickten Stein ist kein Zug möglich");
 			}
+			image.Source = new BitmapImage(new Uri("Resources/Feld_Selection_Black.png", UriKind.Relative));
 
 #if DEBUG //Code wird Nur im Debugmodus ausgeführt
 			MessageBox.Show($"Row {row} und Column {column} ");
@@ -112,9 +116,9 @@ namespace MenschAergereDichNicht
 				.Cast<UIElement>()
 				.First(e => Grid.GetRow(e) == Uebergabe.GeaenderteSpielpunkte[0].Y && Grid.GetColumn(e) == Uebergabe.GeaenderteSpielpunkte[0].X);
 
-				if (temp is Button button)
+				if (temp is Image image)
 				{
-					tresname.
+					image.Source = new BitmapImage(new Uri("Resources/Feld_Selection_Black.png", UriKind.Relative));
 				}
 			}
 

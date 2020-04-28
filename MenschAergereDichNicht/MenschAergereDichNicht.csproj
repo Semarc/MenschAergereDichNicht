@@ -108,29 +108,70 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\A_gelb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\A_gruen.png" />
-    <Resource Include="Resources\A_rot.png" />
-    <Resource Include="Resources\A_schwarz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\gelberstein.png" />
-    <Resource Include="Resources\gruenerstein.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\roterstein.png" />
-    <Resource Include="Resources\schwarzerstein.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\standard_spielstein.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\MenschAergereDichNichtLogik\MenschAergereDichNichtLogik\MenschAergereDichNichtLogik.csproj">
       <Project>{5a477821-e70c-46e2-8ac7-1cd6d8937e24}</Project>
       <Name>MenschAergereDichNichtLogik</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Main_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Main_Empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Main_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Main_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Main_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Selection_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Selection_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Selection_Leer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Selection_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Selection_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Start_Ziel_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Start_Ziel_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Start_Ziel_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feld_Start_Ziel_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wuerfel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wuerfel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wuerfel3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wuerfel4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wuerfel5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wuerfel6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

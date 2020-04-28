@@ -63,9 +63,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap A_gelb {
+        internal static System.Drawing.Bitmap Feld_Main_Black {
             get {
-                object obj = ResourceManager.GetObject("A_gelb", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Main_Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap A_gruen {
+        internal static System.Drawing.Bitmap Feld_Main_Empty {
             get {
-                object obj = ResourceManager.GetObject("A_gruen", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Main_Empty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap A_rot {
+        internal static System.Drawing.Bitmap Feld_Main_Green {
             get {
-                object obj = ResourceManager.GetObject("A_rot", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Main_Green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap A_schwarz {
+        internal static System.Drawing.Bitmap Feld_Main_Red {
             get {
-                object obj = ResourceManager.GetObject("A_schwarz", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Main_Red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gelberstein {
+        internal static System.Drawing.Bitmap Feld_Main_Yellow {
             get {
-                object obj = ResourceManager.GetObject("gelberstein", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Main_Yellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gruenerstein {
+        internal static System.Drawing.Bitmap Feld_Selection_Black {
             get {
-                object obj = ResourceManager.GetObject("gruenerstein", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Selection_Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap roterstein {
+        internal static System.Drawing.Bitmap Feld_Selection_Green {
             get {
-                object obj = ResourceManager.GetObject("roterstein", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Selection_Green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap schwarzerstein {
+        internal static System.Drawing.Bitmap Feld_Selection_Leer {
             get {
-                object obj = ResourceManager.GetObject("schwarzerstein", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Selection_Leer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,119 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap standard_spielstein {
+        internal static System.Drawing.Bitmap Feld_Selection_Red {
             get {
-                object obj = ResourceManager.GetObject("standard_spielstein", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Selection_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feld_Selection_Yellow {
+            get {
+                object obj = ResourceManager.GetObject("Feld_Selection_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feld_Start_Ziel_Black {
+            get {
+                object obj = ResourceManager.GetObject("Feld_Start_Ziel_Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feld_Start_Ziel_Green {
+            get {
+                object obj = ResourceManager.GetObject("Feld_Start_Ziel_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feld_Start_Ziel_Red {
+            get {
+                object obj = ResourceManager.GetObject("Feld_Start_Ziel_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feld_Start_Ziel_Yellow {
+            get {
+                object obj = ResourceManager.GetObject("Feld_Start_Ziel_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wuerfel1 {
+            get {
+                object obj = ResourceManager.GetObject("Wuerfel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wuerfel2 {
+            get {
+                object obj = ResourceManager.GetObject("Wuerfel2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wuerfel3 {
+            get {
+                object obj = ResourceManager.GetObject("Wuerfel3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wuerfel4 {
+            get {
+                object obj = ResourceManager.GetObject("Wuerfel4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wuerfel5 {
+            get {
+                object obj = ResourceManager.GetObject("Wuerfel5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wuerfel6 {
+            get {
+                object obj = ResourceManager.GetObject("Wuerfel6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
