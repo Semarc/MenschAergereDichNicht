@@ -136,11 +136,11 @@
   <data name="Feld_Selection_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Feld_Selection_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Feld_Selection_Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feld_Selection_Leer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Feld_Selection_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Feld_Selection_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Feld_Selection_Leer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Feld_Selection_Leer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Feld_Selection_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Feld_Selection_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,6 +159,69 @@
   </data>
   <data name="Feld_Start_Ziel_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Feld_Start_Ziel_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Black_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Black_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Black_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Black_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Black_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Black_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Black_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Black_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Black_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Black_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Green_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Green_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Green_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Green_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Green_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Green_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Green_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Green_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Green_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Green_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Red_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Red_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Red_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Red_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Red_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Red_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Red_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Red_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Red_31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Red_3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Red_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Red_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Yellow_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Yellow_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Yellow_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Yellow_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Yellow_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Yellow_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Yellow_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Yellow_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="House_Yellow_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_Yellow_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Wuerfel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wuerfel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

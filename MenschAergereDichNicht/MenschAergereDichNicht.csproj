@@ -35,10 +35,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>House_Red_3.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -96,6 +107,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,64 +126,130 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Main_Black.png" />
+    <Resource Include="Resources\Feld_Main_Black.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Main_Empty.png" />
+    <Resource Include="Resources\Feld_Main_Empty.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Main_Green.png" />
+    <Resource Include="Resources\Feld_Main_Green.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Main_Red.png" />
+    <Resource Include="Resources\Feld_Main_Red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Main_Yellow.png" />
+    <Resource Include="Resources\Feld_Main_Yellow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Selection_Black.png" />
+    <Resource Include="Resources\Feld_Selection_Black.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Selection_Green.png" />
+    <Resource Include="Resources\Feld_Selection_Green.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Selection_Leer.png" />
+    <Resource Include="Resources\Feld_Selection_Leer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Selection_Red.png" />
+    <Resource Include="Resources\Feld_Selection_Red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Selection_Yellow.png" />
+    <Resource Include="Resources\Feld_Selection_Yellow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Start_Ziel_Black.png" />
+    <Resource Include="Resources\Feld_Start_Ziel_Black.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Start_Ziel_Green.png" />
+    <Resource Include="Resources\Feld_Start_Ziel_Green.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Start_Ziel_Red.png" />
+    <Resource Include="Resources\Feld_Start_Ziel_Red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Feld_Start_Ziel_Yellow.png" />
+    <Resource Include="Resources\Feld_Start_Ziel_Yellow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wuerfel1.png" />
+    <Resource Include="Resources\Wuerfel1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wuerfel2.png" />
+    <Resource Include="Resources\Wuerfel2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wuerfel3.png" />
+    <Resource Include="Resources\Wuerfel3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wuerfel4.png" />
+    <Resource Include="Resources\Wuerfel4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wuerfel5.png" />
+    <Resource Include="Resources\Wuerfel5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wuerfel6.png" />
+    <Resource Include="Resources\Wuerfel6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Black_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Black_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Black_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Black_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Black_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Green_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Green_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Green_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Green_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Green_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Red_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Red_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Red_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Red_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Red_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Yellow_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Yellow_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Yellow_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Yellow_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\House_Yellow_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\House_Red_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="House_Red_3.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

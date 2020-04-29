@@ -123,9 +123,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Feld_Selection_Green {
+        internal static System.Drawing.Bitmap Feld_Selection_Empty {
             get {
-                object obj = ResourceManager.GetObject("Feld_Selection_Green", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Selection_Empty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace MenschAergereDichNicht.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Feld_Selection_Leer {
+        internal static System.Drawing.Bitmap Feld_Selection_Green {
             get {
-                object obj = ResourceManager.GetObject("Feld_Selection_Leer", resourceCulture);
+                object obj = ResourceManager.GetObject("Feld_Selection_Green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +196,216 @@ namespace MenschAergereDichNicht.Properties {
         internal static System.Drawing.Bitmap Feld_Start_Ziel_Yellow {
             get {
                 object obj = ResourceManager.GetObject("Feld_Start_Ziel_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Black_0 {
+            get {
+                object obj = ResourceManager.GetObject("House_Black_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Black_1 {
+            get {
+                object obj = ResourceManager.GetObject("House_Black_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Black_2 {
+            get {
+                object obj = ResourceManager.GetObject("House_Black_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Black_3 {
+            get {
+                object obj = ResourceManager.GetObject("House_Black_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Black_4 {
+            get {
+                object obj = ResourceManager.GetObject("House_Black_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Green_0 {
+            get {
+                object obj = ResourceManager.GetObject("House_Green_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Green_1 {
+            get {
+                object obj = ResourceManager.GetObject("House_Green_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Green_2 {
+            get {
+                object obj = ResourceManager.GetObject("House_Green_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Green_3 {
+            get {
+                object obj = ResourceManager.GetObject("House_Green_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Green_4 {
+            get {
+                object obj = ResourceManager.GetObject("House_Green_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Red_0 {
+            get {
+                object obj = ResourceManager.GetObject("House_Red_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Red_1 {
+            get {
+                object obj = ResourceManager.GetObject("House_Red_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Red_2 {
+            get {
+                object obj = ResourceManager.GetObject("House_Red_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Red_3 {
+            get {
+                object obj = ResourceManager.GetObject("House_Red_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon House_Red_31 {
+            get {
+                object obj = ResourceManager.GetObject("House_Red_31", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Red_4 {
+            get {
+                object obj = ResourceManager.GetObject("House_Red_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Yellow_0 {
+            get {
+                object obj = ResourceManager.GetObject("House_Yellow_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Yellow_1 {
+            get {
+                object obj = ResourceManager.GetObject("House_Yellow_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Yellow_2 {
+            get {
+                object obj = ResourceManager.GetObject("House_Yellow_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Yellow_3 {
+            get {
+                object obj = ResourceManager.GetObject("House_Yellow_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_Yellow_4 {
+            get {
+                object obj = ResourceManager.GetObject("House_Yellow_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
