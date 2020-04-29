@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing.Design;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +13,13 @@ using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MenschAergereDichNichtLogik;
+using System.Linq;
 using Color = MenschAergereDichNichtLogik.Color;
+using Point = MenschAergereDichNichtLogik.Point;
 
 namespace MenschAergereDichNicht
 {
@@ -29,7 +32,17 @@ namespace MenschAergereDichNicht
 
 		#region Image Dictionaries
 
-		private static readonly Dictionary<(Color, int), BitmapImage> HouseDictionary = new Dictionary<(Color, int), BitmapImage>()
+		private static readonly ReadOnlyDictionary<Color, Point> StartpointDictionary = new ReadOnlyDictionary<Color, Point>(new Dictionary<Color, Point>
+		{
+			[Color.Red] = new Point(10, 6),
+			[Color.Black] = new Point(4, 10),
+			[Color.Yellow] = new Point(0, 4),
+			[Color.Green] = new Point(6, 0)
+		});
+
+
+		private static readonly ReadOnlyDictionary<(Color, int), BitmapImage> HouseDictionary = new ReadOnlyDictionary<(Color, int), BitmapImage>(
+		new Dictionary<(Color, int), BitmapImage>
 		{
 			[(Color.Red, 0)] = BitmapImageFromFilePath(@"Resources\House_Red_0.png"),
 			[(Color.Red, 1)] = BitmapImageFromFilePath(@"Resources\House_Red_1.png"),
@@ -54,9 +67,10 @@ namespace MenschAergereDichNicht
 			[(Color.Green, 2)] = BitmapImageFromFilePath(@"Resources\House_Green_2.png"),
 			[(Color.Green, 3)] = BitmapImageFromFilePath(@"Resources\House_Green_3.png"),
 			[(Color.Green, 4)] = BitmapImageFromFilePath(@"Resources\House_Green_4.png")
-		};
+		});
 
-		private static readonly Dictionary<(Color, bool), BitmapImage> RegularFieldsDictionary = new Dictionary<(Color, bool), BitmapImage>()
+		private static readonly ReadOnlyDictionary<(Color, bool), BitmapImage> RegularFieldsDictionary = new ReadOnlyDictionary<(Color, bool), BitmapImage>(
+		new Dictionary<(Color, bool), BitmapImage>
 		{
 			[(Color.Empty, false)] = BitmapImageFromFilePath(@"Resources\Feld_Main_Empty.png"),
 			[(Color.Red, false)] = BitmapImageFromFilePath(@"Resources\Feld_Main_Red.png"),
@@ -69,15 +83,16 @@ namespace MenschAergereDichNicht
 			[(Color.Black, true)] = BitmapImageFromFilePath(@"Resources\Feld_Selection_Black.png"),
 			[(Color.Yellow, true)] = BitmapImageFromFilePath(@"Resources\Feld_Selection_Yellow.png"),
 			[(Color.Green, true)] = BitmapImageFromFilePath(@"Resources\Feld_Selection_Green.png")
-		};
+		});
 
-		private static readonly Dictionary<Color, BitmapImage> StartFinishPointDictionary = new Dictionary<Color, BitmapImage>()
+		private static readonly ReadOnlyDictionary<Color, BitmapImage> StartFinishPointDictionary = new ReadOnlyDictionary<Color, BitmapImage>(
+		new Dictionary<Color, BitmapImage>
 		{
 			[Color.Red] = BitmapImageFromFilePath(@"Resources\Feld_Start_Ziel_Red.png"),
 			[Color.Black] = BitmapImageFromFilePath(@"Resources\Feld_Start_Ziel_Black.png"),
 			[Color.Yellow] = BitmapImageFromFilePath(@"Resources\Feld_Start_Ziel_Yellow.png"),
 			[Color.Green] = BitmapImageFromFilePath(@"Resources\Feld_Start_Ziel_Green.png")
-		};
+		});
 
 
 		private static BitmapImage BitmapImageFromFilePath(string Filepath)
@@ -89,15 +104,7 @@ namespace MenschAergereDichNicht
 
 		#region Grafic Elements
 
-		/*<StackPanel Orientation="Vertical" Name="MainStackpanel">
-
-		<StackPanel Width="400" Height="auto">
-			<Button x:Name="btn_wuerfeln" Click="btn_wuerfeln_Click" Margin="40">Würfeln</Button>
-			<TextBlock x:Name="wuerfelzahl_textblock" Margin="0" TextAlignment="Center">Wuerfelzahl</TextBlock>
-		</StackPanel>
-	</StackPanel>*/
-
-
+		private readonly Image[,] images;
 		private readonly Grid Spielfeld_Grid;
 		private readonly StackPanel MainStackpanel;
 		private readonly StackPanel WuerfelStackpanel;
@@ -154,7 +161,7 @@ namespace MenschAergereDichNicht
 				Spielfeld_Grid.RowDefinitions.Add(new RowDefinition());
 			}
 
-
+			images = new Image[11, 11];
 			for (int x = 0; x < Logik.Board.Count; x++)
 			{
 				for (int y = 0; y < Logik.Board[x].Count; y++)
@@ -183,21 +190,17 @@ namespace MenschAergereDichNicht
 
 
 
-			#region Start und Zielpunkte
+			#region Startpunkte
+
+			foreach (KeyValuePair<Color, Point> keyValuePair in StartpointDictionary)
+			{
+				images[keyValuePair.Value.X, keyValuePair.Value.Y].Source = StartFinishPointDictionary[keyValuePair.Key];
+			}
+
 
 			#endregion
 
 			#region Playername-Labels
-			/*<!-- Spielernamen -->
-			<!-- Schwarz-->
-			<Label x:Name="lbl_ErsterSpielerName" Grid.Row="8" ></Label>
-			<!-- Rot -->
-			<Label  x:Name="lbl_ZweiterSpielerName" Grid.Row="8" Grid.Column="9" ></Label>
-			<!-- Grün -->
-			<Label  x:Name="lbl_DritterSpielerName" Grid.Row="2" Grid.Column="9"></Label>
-			<!-- Gelb -->
-			<Label  x:Name="lbl_VierterSpielerName" Grid.Row="2"  ></Label>*/
-
 			switch (Logik.PlayerList.Count)
 			{
 				case 1:
@@ -245,7 +248,8 @@ namespace MenschAergereDichNicht
 				Image tempimage = new Image();
 				Grid.SetColumn(tempimage, x);
 				Grid.SetRow(tempimage, y);
-				this.Spielfeld_Grid.Children.Add(tempimage);
+				images[x, y] = tempimage;
+				Spielfeld_Grid.Children.Add(tempimage);
 				return tempimage;
 			}
 
@@ -338,13 +342,19 @@ namespace MenschAergereDichNicht
 		{
 			while (Uebergabe.GeaenderteSpielpunkte.Count > 0)
 			{
-				UIElement temp = Spielfeld_Grid.Children
-				.Cast<UIElement>()
-				.First(e => Grid.GetRow(e) == Uebergabe.GeaenderteSpielpunkte[0].Y && Grid.GetColumn(e) == Uebergabe.GeaenderteSpielpunkte[0].X);
-
-				if (temp is Image image)
+				Point Temppoint = Uebergabe.GeaenderteSpielpunkte[0];
+				Image tempImage = images[Temppoint.X, Temppoint.Y];
+				if (tempImage is Image image)
 				{
-					image.Source = HouseDictionary[(Color.Red, 0)];
+					if (Logik.Board[Temppoint.X][Temppoint.Y] is FinishField finishfield && finishfield.Color == Color.Empty)
+					{
+						tempImage.Source = StartFinishPointDictionary[finishfield.FinishPointColor];
+					}
+					else if (Logik.Board[Temppoint.X][Temppoint.Y].Color != Color.Empty && ((ICollection<Point>)StartpointDictionary.Values).Contains(Temppoint))
+					{
+						((IEnumerable<Point>)StartpointDictionary.Values).first
+					}
+					image.Source = RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
 				}
 			}
 
