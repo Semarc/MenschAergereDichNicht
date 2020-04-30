@@ -94,6 +94,17 @@ namespace MenschAergereDichNicht
 			[Color.Green] = BitmapImageFromFilePath(@"Resources\Feld_Start_Ziel_Green.png")
 		});
 
+		private static readonly ReadOnlyDictionary<int, BitmapImage> DicePictureDictionary = new ReadOnlyDictionary<int, BitmapImage>(
+		new Dictionary<int, BitmapImage>
+		{
+			[1] = BitmapImageFromFilePath(@"Resources\Wuerfel1.png"),
+			[2] = BitmapImageFromFilePath(@"Resources\Wuerfel2.png"),
+			[3] = BitmapImageFromFilePath(@"Resources\Wuerfel3.png"),
+			[4] = BitmapImageFromFilePath(@"Resources\Wuerfel4.png"),
+			[5] = BitmapImageFromFilePath(@"Resources\Wuerfel5.png"),
+			[6] = BitmapImageFromFilePath(@"Resources\Wuerfel6.png"),
+		});
+
 
 		private static BitmapImage BitmapImageFromFilePath(string Filepath)
 		{
@@ -169,7 +180,7 @@ namespace MenschAergereDichNicht
 					if (Logik.Board[x][y] != null)
 					{
 						Image tempimage = CreateNewImageAtGridPosition(x, y);
-						tempimage.MouseDown += HouseMouseDown;
+						tempimage.MouseDown += FeldKlick;
 
 						if (Logik.Board[x][y] is FinishField finish)
 						{
@@ -241,6 +252,12 @@ namespace MenschAergereDichNicht
 					goto case 3;
 			}
 
+
+			Grafikupdates();
+
+
+
+
 			#endregion
 
 			Image CreateNewImageAtGridPosition(int x, int y)
@@ -282,7 +299,7 @@ namespace MenschAergereDichNicht
 		{
 
 			Logik.DiceKlick();
-			wuerfelzahl_textblock.Text = Logik.Wuerfelzahl.ToString();
+			Grafikupdates();
 		}
 
 		private void FeldKlick(object sender, RoutedEventArgs e)
@@ -294,11 +311,8 @@ namespace MenschAergereDichNicht
 			{
 				MessageBox.Show(" Mit dem angeklickten Stein ist kein Zug möglich");
 			}
-			image.Source = new BitmapImage(new Uri("Feld_Selection_Black.png", UriKind.Relative));
 
-#if DEBUG //Code wird Nur im Debugmodus ausgeführt
-			MessageBox.Show($"Row {row} und Column {column} ");
-#endif
+			Grafikupdates();
 		}
 
 		private void HouseMouseDown(object sender, RoutedEventArgs e)
@@ -319,16 +333,13 @@ namespace MenschAergereDichNicht
 			if (sender is Image image && Enum.TryParse(image.Tag.ToString(), out Color color))
 			{
 				Logik.HomeClick(color);
-
-#if DEBUG //Code wird Nur im Debugmodus ausgeführt
-				MessageBox.Show($"Row {Grid.GetRow(image)} und Column {Grid.GetColumn(image)}, Farbe ist {color}");
-#endif
 			}
 			else
 			{
 				MessageBox.Show("Button ist null gewesen, oder invalid Tag");
 			}
 
+			Grafikupdates();
 		}
 
 		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -352,11 +363,24 @@ namespace MenschAergereDichNicht
 					}
 					else if (Logik.Board[Temppoint.X][Temppoint.Y].Color != Color.Empty && ((ICollection<Point>)StartpointDictionary.Values).Contains(Temppoint))
 					{
-						((IEnumerable<Point>)StartpointDictionary.Values).first
+						foreach (KeyValuePair<Color, Point> keyValuePair in StartpointDictionary)
+						{
+
+							if (keyValuePair.Value == Temppoint)
+							{
+								tempImage.Source = StartFinishPointDictionary[keyValuePair.Key];
+							}
+						}
 					}
-					image.Source = RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
+					else
+					{
+						image.Source = RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
+					}
 				}
+				Uebergabe.GeaenderteSpielpunkte.RemoveAt(0);
 			}
+
+			wuerfelzahl_textblock.Text = $"Wuerfelzahl: {Logik.Wuerfelzahl}{Environment.NewLine}Aktueller Spieler: {Logik.PlayerList[Logik.CurrentPlayerIndex].Name}, {Logik.PlayerList[Logik.CurrentPlayerIndex].Color}";
 
 		}
 	}
