@@ -31,16 +31,6 @@ namespace MenschAergereDichNicht
 	{
 
 		#region Image Dictionaries
-
-		private static readonly ReadOnlyDictionary<Color, Point> StartpointDictionary = new ReadOnlyDictionary<Color, Point>(new Dictionary<Color, Point>
-		{
-			[Color.Red] = new Point(10, 6),
-			[Color.Black] = new Point(4, 10),
-			[Color.Yellow] = new Point(0, 4),
-			[Color.Green] = new Point(6, 0)
-		});
-
-
 		private static readonly ReadOnlyDictionary<(Color, int), BitmapImage> HouseDictionary = new ReadOnlyDictionary<(Color, int), BitmapImage>(
 		new Dictionary<(Color, int), BitmapImage>
 		{
@@ -125,6 +115,7 @@ namespace MenschAergereDichNicht
 
 		public MainWindow() : base()
 		{
+
 			InitializeComponent();
 
 
@@ -203,9 +194,9 @@ namespace MenschAergereDichNicht
 
 			#region Startpunkte
 
-			foreach (KeyValuePair<Color, Point> keyValuePair in StartpointDictionary)
+			foreach (KeyValuePair<Color, Point> keyValuePair in Logik.StartPointsDictionary)
 			{
-				images[keyValuePair.Value.X, keyValuePair.Value.Y].Source = StartFinishPointDictionary[keyValuePair.Key];
+				images[keyValuePair.Value.X, PointToGridPoint(keyValuePair.Value).Y].Source = StartFinishPointDictionary[keyValuePair.Key];
 			}
 
 
@@ -354,16 +345,16 @@ namespace MenschAergereDichNicht
 			while (Uebergabe.GeaenderteSpielpunkte.Count > 0)
 			{
 				Point Temppoint = Uebergabe.GeaenderteSpielpunkte[0];
-				Image tempImage = images[Temppoint.X, Temppoint.Y];
+				Image tempImage = images[Temppoint.X, PointToGridPoint(Temppoint).Y];
 				if (tempImage is Image image)
 				{
 					if (Logik.Board[Temppoint.X][Temppoint.Y] is FinishField finishfield && finishfield.Color == Color.Empty)
 					{
 						tempImage.Source = StartFinishPointDictionary[finishfield.FinishPointColor];
 					}
-					else if (Logik.Board[Temppoint.X][Temppoint.Y].Color != Color.Empty && ((ICollection<Point>)StartpointDictionary.Values).Contains(Temppoint))
+					else if (Logik.Board[Temppoint.X][Temppoint.Y].Color != Color.Empty && ((ICollection<Point>)Logik.StartPointsDictionary.Values).Contains(Temppoint))
 					{
-						foreach (KeyValuePair<Color, Point> keyValuePair in StartpointDictionary)
+						foreach (KeyValuePair<Color, Point> keyValuePair in Logik.StartPointsDictionary)
 						{
 
 							if (keyValuePair.Value == Temppoint)
@@ -383,5 +374,11 @@ namespace MenschAergereDichNicht
 			wuerfelzahl_textblock.Text = $"Wuerfelzahl: {Logik.Wuerfelzahl}{Environment.NewLine}Aktueller Spieler: {Logik.PlayerList[Logik.CurrentPlayerIndex].Name}, {Logik.PlayerList[Logik.CurrentPlayerIndex].Color}";
 
 		}
+
+		private Point PointToGridPoint(Point point)
+		{
+			return new Point(point.X, 10 - point.Y);
+		}
+
 	}
 }
