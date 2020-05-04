@@ -295,7 +295,10 @@ namespace MenschAergereDichNicht
 		private void Wuerfeln_Click(object sender, RoutedEventArgs e)
 		{
 
-			Logik.DiceKlick();
+			if(Logik.DiceKlick(out int wuerfel) == false)
+			{
+				MessageBox.Show(this, $"Es ist aktuell kein Zug möglich, da eine {wuerfel} gewürfelt wurde, der nächste Spieler ist dran");
+			}
 			Grafikupdates();
 		}
 
@@ -306,7 +309,7 @@ namespace MenschAergereDichNicht
 			int column = Grid.GetColumn(image);
 			if (Logik.FieldClick(column, row) == false)
 			{
-				MessageBox.Show("Mit dem angeklickten Feld ist keine Aktion möglich");
+				MessageBox.Show(this, "Mit dem angeklickten Feld ist keine Aktion möglich");
 			}
 
 			Grafikupdates();
@@ -416,14 +419,12 @@ namespace MenschAergereDichNicht
 
 			wuerfelzahl_textblock.Text = $"Wuerfelzahl: {Logik.Wuerfelzahl}{Environment.NewLine}Aktueller Spieler: {Logik.PlayerList[Logik.CurrentPlayerIndex].Name}, {Logik.PlayerList[Logik.CurrentPlayerIndex].Color.ColorToProperString()}";
 
-			if (Uebergabe.Starthauserveraendert == true)
-			{
-				Uebergabe.Starthauserveraendert = false;
+
 				for (int i = 0; i < Logik.PlayerList.Count; i++)
 				{
 					StarthouseImageDictionary[(Color)i + 1].Source = HouseDictionary[((Color)i + 1, Logik.PlayerList[i].NumberHome)];
 				}
-			}
+			
 		}
 
 		private void Window_KeyDown(object sender, KeyEventArgs e)
