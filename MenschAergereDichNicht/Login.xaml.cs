@@ -32,9 +32,11 @@ namespace MenschAergereDichNicht
             {
                 if (string.IsNullOrWhiteSpace(tbx_ZweiterSpieler.Text) == false)
                 {
-                    List<string> NamenderSpieler = new List<string>();
-                    NamenderSpieler.Add(tbx_ErsterSpieler.Text);
-                    NamenderSpieler.Add(tbx_ZweiterSpieler.Text);
+                    List<string> NamenderSpieler = new List<string>
+                    {
+                        tbx_ErsterSpieler.Text,
+                        tbx_ZweiterSpieler.Text
+                    };
 
                     if (string.IsNullOrWhiteSpace(tbx_DritterSpieler.Text) == false)
                     {

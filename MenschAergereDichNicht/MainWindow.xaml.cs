@@ -370,7 +370,6 @@ namespace MenschAergereDichNicht
 				}
 				else
 				{
-					bool test =	tempImage.Source == RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
 					tempImage.Source = RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
 				}
 
