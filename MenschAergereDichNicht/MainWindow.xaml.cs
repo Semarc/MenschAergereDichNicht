@@ -309,7 +309,7 @@ namespace MenschAergereDichNicht
 			int column = Grid.GetColumn(image);
 			if (Logik.FieldClick(column, row) == false)
 			{
-				MessageBox.Show(this, "Mit dem angeklickten Feld ist keine Aktion möglich");
+				MessageBox.Show(this, "Mit dem angeklickten Feld ist keine Regelkonforme Aktion möglich");
 			}
 
 			Grafikupdates();
