@@ -147,7 +147,7 @@
     <Resource Include="Resources\Feld_Selection_Green.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Feld_Selection_Leer.png" />
+    <Resource Include="Resources\Feld_Selection_Empty.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Feld_Selection_Red.png" />

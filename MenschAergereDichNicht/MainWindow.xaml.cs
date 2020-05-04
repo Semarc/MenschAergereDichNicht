@@ -106,6 +106,7 @@ namespace MenschAergereDichNicht
 		#region Grafic Elements
 
 		private readonly Image[,] images;
+		private readonly ReadOnlyDictionary<Color, Image> StarthouseImageDictionary;
 		private readonly Grid Spielfeld_Grid;
 		private readonly StackPanel MainStackpanel;
 		private readonly StackPanel WuerfelStackpanel;
@@ -184,12 +185,16 @@ namespace MenschAergereDichNicht
 			}
 
 
-
-			CreateStartHouse(Color.Red, 9, 9);
-			CreateStartHouse(Color.Black, 0, 9);
-			CreateStartHouse(Color.Yellow, 0, 0);
-			CreateStartHouse(Color.Green, 9, 0);
-
+			Dictionary<Color, Image> tempDict = new Dictionary<Color, Image>();
+			int j = 1;
+			tempDict.Add((Color)j, CreateStartHouse((Color)j, 9, 9));
+			j++;
+			tempDict.Add((Color)j, CreateStartHouse((Color)j, 0, 9));
+			j++;
+			tempDict.Add((Color)j, CreateStartHouse((Color)j, 0, 0));
+			j++;
+			tempDict.Add((Color)j, CreateStartHouse((Color)j, 9, 0));
+			StarthouseImageDictionary = new ReadOnlyDictionary<Color, Image>(tempDict);
 
 
 			#region Startpunkte
@@ -267,7 +272,7 @@ namespace MenschAergereDichNicht
 				Grid.SetColumnSpan(HouseImage, 2);
 			}
 
-			void CreateStartHouse(Color StarthouseColor, int X, int Y)
+			Image CreateStartHouse(Color StarthouseColor, int X, int Y)
 			{
 				Image House = CreateNewImageAtGridPosition(X, Y);
 
@@ -282,6 +287,7 @@ namespace MenschAergereDichNicht
 				{
 					House.Source = HouseDictionary[(StarthouseColor, 0)];
 				}
+				return House;
 			}
 		}
 
@@ -296,9 +302,9 @@ namespace MenschAergereDichNicht
 		private void FeldKlick(object sender, RoutedEventArgs e)
 		{
 			Image image = sender as Image;
-			int row = Grid.GetRow(image);
+			int row = 10 - Grid.GetRow(image);
 			int column = Grid.GetColumn(image);
-			if (Logik.FieldClick(row, column) == false)
+			if (Logik.FieldClick(column, row) == false)
 			{
 				MessageBox.Show(" Mit dem angeklickten Stein ist kein Zug möglich");
 			}
@@ -321,9 +327,9 @@ namespace MenschAergereDichNicht
 
 
 
-			if (sender is Image image && Enum.TryParse(image.Tag.ToString(), out Color color))
+			if (sender is Image image)
 			{
-				Logik.HomeClick(color);
+				Logik.HomeClick((Color)image.Tag);
 			}
 			else
 			{
@@ -346,33 +352,41 @@ namespace MenschAergereDichNicht
 			{
 				Point Temppoint = Uebergabe.GeaenderteSpielpunkte[0];
 				Image tempImage = images[Temppoint.X, PointToGridPoint(Temppoint).Y];
-				if (tempImage is Image image)
+				if (Logik.Board[Temppoint.X][Temppoint.Y] is FinishField finishfield && finishfield.Color == Color.Empty)
 				{
-					if (Logik.Board[Temppoint.X][Temppoint.Y] is FinishField finishfield && finishfield.Color == Color.Empty)
+					tempImage.Source = StartFinishPointDictionary[finishfield.FinishPointColor];
+				}
+				else if (Logik.Board[Temppoint.X][Temppoint.Y].Color == Color.Empty && ((ICollection<Point>)Logik.StartPointsDictionary.Values).Contains(Temppoint))
+				{
+					foreach (KeyValuePair<Color, Point> keyValuePair in Logik.StartPointsDictionary)
 					{
-						tempImage.Source = StartFinishPointDictionary[finishfield.FinishPointColor];
-					}
-					else if (Logik.Board[Temppoint.X][Temppoint.Y].Color != Color.Empty && ((ICollection<Point>)Logik.StartPointsDictionary.Values).Contains(Temppoint))
-					{
-						foreach (KeyValuePair<Color, Point> keyValuePair in Logik.StartPointsDictionary)
-						{
 
-							if (keyValuePair.Value == Temppoint)
-							{
-								tempImage.Source = StartFinishPointDictionary[keyValuePair.Key];
-							}
+						if (keyValuePair.Value == Temppoint)
+						{
+							tempImage.Source = StartFinishPointDictionary[keyValuePair.Key];
+							break;
 						}
 					}
-					else
-					{
-						image.Source = RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
-					}
 				}
+				else
+				{
+					bool test =	tempImage.Source == RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
+					tempImage.Source = RegularFieldsDictionary[(Logik.Board[Temppoint.X][Temppoint.Y].Color, Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt)];
+				}
+
 				Uebergabe.GeaenderteSpielpunkte.RemoveAt(0);
 			}
 
 			wuerfelzahl_textblock.Text = $"Wuerfelzahl: {Logik.Wuerfelzahl}{Environment.NewLine}Aktueller Spieler: {Logik.PlayerList[Logik.CurrentPlayerIndex].Name}, {Logik.PlayerList[Logik.CurrentPlayerIndex].Color}";
 
+			if(Uebergabe.Starthauserveraendert == true)
+			{
+				Uebergabe.Starthauserveraendert = false;
+				for (int i = 0; i < Logik.PlayerList.Count; i++)
+				{
+					StarthouseImageDictionary[(Color)i - 1].Source = HouseDictionary[((Color)i - 1, Logik.PlayerList[i].NumberHome)];
+				}
+			}
 		}
 
 		private Point PointToGridPoint(Point point)
