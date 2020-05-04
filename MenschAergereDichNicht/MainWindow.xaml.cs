@@ -201,7 +201,7 @@ namespace MenschAergereDichNicht
 
 			foreach (KeyValuePair<Color, Point> keyValuePair in Logik.StartPointsDictionary)
 			{
-				images[keyValuePair.Value.X, PointToGridPoint(keyValuePair.Value).Y].Source = StartFinishPointDictionary[keyValuePair.Key];
+				images[keyValuePair.Value.X, Helpermethods.PointToGridPoint(keyValuePair.Value).Y].Source = StartFinishPointDictionary[keyValuePair.Key];
 			}
 
 
@@ -331,11 +331,6 @@ namespace MenschAergereDichNicht
 			{
 				Logik.HomeClick((Color)image.Tag);
 			}
-			else
-			{
-				MessageBox.Show("Button ist null gewesen, oder invalid Tag");
-			}
-
 			Grafikupdates();
 		}
 
@@ -348,15 +343,22 @@ namespace MenschAergereDichNicht
 
 		public void Grafikupdates()
 		{
+			if (Uebergabe.PlayerHasWon != Color.Empty)
+			{
+				MessageBox.Show(this, $"{Logik.PlayerList[Logik.CurrentPlayerIndex].Name} mit der Farbe {Logik.PlayerList[Logik.CurrentPlayerIndex].Color.ColorToProperString()} hat das Spiel gewonnen!{Environment.NewLine}Herzlichen Glückwunsch");
+			}
+
+
+
 			while (Uebergabe.GeaenderteSpielpunkte.Count > 0)
 			{
 				Point Temppoint = Uebergabe.GeaenderteSpielpunkte[0];
-				Image tempImage = images[Temppoint.X, PointToGridPoint(Temppoint).Y];
+				Image tempImage = images[Temppoint.X, Helpermethods.PointToGridPoint(Temppoint).Y];
 				if (Logik.Board[Temppoint.X][Temppoint.Y] is FinishField finishfield && finishfield.Color == Color.Empty)
 				{
 					tempImage.Source = StartFinishPointDictionary[finishfield.FinishPointColor];
 				}
-				else if (Logik.Board[Temppoint.X][Temppoint.Y].Color == Color.Empty && ((ICollection<Point>)Logik.StartPointsDictionary.Values).Contains(Temppoint))
+				else if (Logik.Board[Temppoint.X][Temppoint.Y].Color == Color.Empty && Logik.Board[Temppoint.X][Temppoint.Y].IsAusgewaehlt == false && ((ICollection<Point>)Logik.StartPointsDictionary.Values).Contains(Temppoint))
 				{
 					foreach (KeyValuePair<Color, Point> keyValuePair in Logik.StartPointsDictionary)
 					{
@@ -376,9 +378,9 @@ namespace MenschAergereDichNicht
 				Uebergabe.GeaenderteSpielpunkte.RemoveAt(0);
 			}
 
-			wuerfelzahl_textblock.Text = $"Wuerfelzahl: {Logik.Wuerfelzahl}{Environment.NewLine}Aktueller Spieler: {Logik.PlayerList[Logik.CurrentPlayerIndex].Name}, {Logik.PlayerList[Logik.CurrentPlayerIndex].Color}";
+			wuerfelzahl_textblock.Text = $"Wuerfelzahl: {Logik.Wuerfelzahl}{Environment.NewLine}Aktueller Spieler: {Logik.PlayerList[Logik.CurrentPlayerIndex].Name}, {Logik.PlayerList[Logik.CurrentPlayerIndex].Color.ColorToProperString()}";
 
-			if(Uebergabe.Starthauserveraendert == true)
+			if (Uebergabe.Starthauserveraendert == true)
 			{
 				Uebergabe.Starthauserveraendert = false;
 				for (int i = 0; i < Logik.PlayerList.Count; i++)
@@ -387,11 +389,31 @@ namespace MenschAergereDichNicht
 				}
 			}
 		}
+	}
 
-		private Point PointToGridPoint(Point point)
+	public static class Helpermethods
+	{
+		public static Point PointToGridPoint(Point point)
 		{
 			return new Point(point.X, 10 - point.Y);
 		}
-
+		public static string ColorToProperString(this Color color)
+		{
+			switch (color)
+			{
+				case Color.Empty:
+					return "Leer";
+				case Color.Red:
+					return "Rot";
+				case Color.Black:
+					return "Schwarz";
+				case Color.Yellow:
+					return "Gelb";
+				case Color.Green:
+					return "Grün";
+				default:
+					return null;
+			}
+		}
 	}
 }
