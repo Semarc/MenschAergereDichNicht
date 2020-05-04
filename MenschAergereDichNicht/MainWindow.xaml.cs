@@ -384,7 +384,7 @@ namespace MenschAergereDichNicht
 				Uebergabe.Starthauserveraendert = false;
 				for (int i = 0; i < Logik.PlayerList.Count; i++)
 				{
-					StarthouseImageDictionary[(Color)i - 1].Source = HouseDictionary[((Color)i - 1, Logik.PlayerList[i].NumberHome)];
+					StarthouseImageDictionary[(Color)i + 1].Source = HouseDictionary[((Color)i + 1, Logik.PlayerList[i].NumberHome)];
 				}
 			}
 		}
