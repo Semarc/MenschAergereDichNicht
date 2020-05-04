@@ -4,5 +4,5 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		mc:Ignorable="d"
-		Title="MainWindow" Height="862.5" Width="684" Closing="Window_Closing"  >	
+		Title="Mensch Ärgere dich Nicht" Height="862.5" Width="684" Closing="Window_Closing" KeyDown="Window_KeyDown"  >	
 </Window>
